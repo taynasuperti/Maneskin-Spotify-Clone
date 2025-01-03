@@ -8,41 +8,45 @@ body {
 }
 
 .artist-profile {
-    background-color: #121212; /* Cor de fundo para todo o perfil */
+    background-color: #121212;
+    overflow: hidden;
 }
 
-/* Estilo do Header (Imagem de Capa + Foto do Artista) */
+/* Estilo do Header */
 .artist-header {
     position: relative;
-    background-color: #000;
+    height: 400px; /* Altura maior para se aproximar do Spotify */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .artist-cover {
     width: 100%;
-    height: 350px;
+    height: 100%;
     object-fit: cover;
-    filter: brightness(70%);
+    object-position: 50% 20%;  /* Ajuste fino para centralizar os rostos */
+    filter: brightness(50%);
 }
 
-.artist-info {
-    display: flex;
+
+/* Gradiente de sobreposição para efeito visual */
+.overlay {
     position: absolute;
-    top: 40%;
-    left: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+
+/* Informação do Artista (posição e estilo) */
+.artist-info {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    display: flex;
     align-items: center;
-}
-
-.artist-photo {
-    margin-right: 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid #fff;
-}
-
-.photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
 }
 
 .info-text {
@@ -50,10 +54,16 @@ body {
 }
 
 .artist-name {
-    font-size: 48px;
-    font-weight: bold;
-    margin: 0;
+    font-size: 72px;
+    font-weight: 900;
+    margin-bottom: 5px;
 }
+
+.monthly-listeners {
+    font-size: 18px;
+    color: #b3b3b3;
+}
+
 
 .monthly-listeners {
     font-size: 16px;
@@ -64,31 +74,77 @@ body {
 /* Controles de Reprodução */
 .artist-controls {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 20px;
-    gap: 20px;
-    padding: 10px 20px;
-    background-color: #1E1E1E; /* Cor mais escura para os botões */
-    border-radius: 50px;
+    align-items: center;
+    margin-top: 10px;
+    gap: 25px;
+    padding: 10px 24px;
 }
 
-.play-button, .random-button, .follow-button {
-    background-color: #1DB954;
-    border: none;
-    padding: 12px 24px;
+/* Ícone de Play */
+.play-icon {
+    font-size: 70px;  /* Maior que os outros para dar destaque */
+    color: #1DB954;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+
+.play-icon:hover {
+    color: #1ED760;
+}
+
+/* Ícone de Aleatório */
+.shuffle-icon {
+    font-size: 38px;  /* Menor para diferenciar */
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.shuffle-icon:hover {
+    color: #A7A7A7;
+}
+
+.shuffle-icon.active {
+    color: #1DB954;  /* Cor verde do Spotify */
+}
+
+
+/* Botão de Seguir */
+.follow-button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 10px 32px;
     color: white;
     font-size: 16px;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.play-button:hover, .random-button:hover, .follow-button:hover {
-    background-color: #1ED760;
+.follow-button.active {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
 }
 
-.play-button i, .random-button i {
-    margin-right: 8px;
+.follow-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+/* Ícone de Ellipsis (...) */
+.fa-ellipsis {
+    font-size: 24px;  /* Discreto, mas visível */
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fa-ellipsis:hover {
+    color: #A7A7A7;
 }
 
 /* Lista de Faixas Populares */
@@ -126,6 +182,12 @@ body {
     width: 100%;
 }
 
+.track-number {
+    font-size: 18px;
+    color: #bbb;
+    margin-right: 20px;
+}
+
 .track-img img {
     width: 40px;
     height: 40px;
@@ -140,11 +202,58 @@ body {
     margin-right: auto;
 }
 
-.track-duration {
+.track-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Utilizando a largura completa */
+    margin-left: 8px; /* Aumenta o espaçamento à esquerda */
+}
+
+
+.track-listens, .track-duration {
     font-size: 14px;
     color: #bbb;
 }
 
+.like-icon i {
+    font-size: 18px;
+    color: #bbb;  /* Cor padrão (não curtido) */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.like-icon i.liked {
+    color: #1DB954; /* Cor quando curtido */
+}
+
+.like-icon i:hover {
+    color: #A7A7A7; /* Cor ao passar o mouse */
+}
+
+
+/* Alterar para mostrar ícone de Play ao passar o mouse */
+.track-item:hover .track-number {
+    color: #fff;
+}
+
+.track-item:hover .track-name {
+    color: #fff;
+}
+
+.track-item:hover .track-duration {
+    color: #1DB954;
+}
+
+/* Adicionando o ícone de "ellipsis" */
+.track-item .track-duration:hover {
+    color: #fff;
+}
+
+.track-item .track-info {
+    display: flex;
+    align-items: center;
+}
 /* Discografia */
 .discography {
     margin-top: 30px;
@@ -218,3 +327,30 @@ body {
     }
 }
 
+.track-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.track-cover {
+    width: 50px;  /* Ajuste o tamanho conforme necessário */
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.track-duration {
+    font-size: 14px;
+    color: #b3b3b3;
+}

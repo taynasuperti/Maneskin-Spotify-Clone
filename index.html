@@ -4,49 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Artista</title>
+    <link rel="icon" type="imagem/png" href="img/spotify-icon-transparent-png.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="artist-profile">
         <!-- Imagem de Capa -->
         <div class="artist-header">
-            <img src="img/capa.jpg" alt="Capa do artista" class="artist-cover">
+            <img src="img/capa-2.jpg" alt="Capa do artista" class="artist-cover">
+            <div class="overlay"></div> <!-- Efeito de sobreposição -->
             <div class="artist-info">
-                <!-- Nome do Artista e Ouvintes -->
                 <div class="info-text">
                     <h1 class="artist-name">Måneskin</h1>
-                    <p class="monthly-listeners">30 milhões de ouvintes mensais</p>
+                    <p class="monthly-listeners">20.399.010 ouvintes mensais</p>
                 </div>
             </div>
         </div>
+    </div>
+    
 
-        <!-- Botões de Reprodução e Aleatório -->
-        <div class="artist-controls">
-            <button class="play-button">Reproduzir</button>
-            <button class="random-button">Aleatório</button>
-            <button class="follow-button">Seguir</button>
-        </div>
+    <!-- Botões de Reprodução e Aleatório -->
+<div class="artist-controls">
+    <i class="fa-solid fa-circle-play play-icon"></i>
+    <i class="fa-solid fa-random shuffle-icon"></i>
+    <button class="follow-button">Seguir</button>
+    <i class="fa-solid fa-ellipsis"></i>
+</div>
 
-        <!-- Faixas Populares -->
-        <div class="popular-tracks">
-            <h2>Faixas Populares</h2>
-            <ul class="track-list">
-                <li class="track-item">
-                    <div class="track-info">
-                        <img src="img/beggin.jpg" alt="beggin">
-                        <span class="track-name">Beggin'</span>
-                        <span class="track-duration">3:30</span>
+
+    <!-- Faixas Populares -->
+<div class="popular-tracks">
+    <h2>Populares</h2>
+    <ul class="track-list">
+        <li class="track-item">
+            <div class="track-number">
+                1
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>            
+            <div class="track-img">
+                <img src="img/chosen.jpg" alt="Beggin" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">Beggin'</span>
+                <div class="track-details">
+                    <span class="track-listens">1.781.932.202</span>
+                    <span class="track-duration">3:31</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
                     </div>
-                </li>
-                <li class="track-item">
-                    <div class="track-info">
-                        <span class="track-name">I Wanna Be Your Slave</span>
-                        <span class="track-duration">3:20</span>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                2
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>
+            <div class="track-img">
+                <img src="img/teatro-dira-vol-1.jpg" alt="I WANNA BE YOUR SLAVE" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">I WANNA BE YOUR SLAVE</span>
+                <div class="track-details">
+                    <span class="track-listens">1.203.412.545</span>
+                    <span class="track-duration">2:53</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
                     </div>
-                </li>
-                <!-- Adicionar mais faixas -->
-            </ul>
-        </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                3
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>            
+            <div class="track-img">
+                <img src="img/rush.jpg" alt="GOSSIP" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">GOSSIP (feat. Tom Morello)</span>
+                <div class="track-details">
+                    <span class="track-listens">314.172.811</span>
+                    <span class="track-duration">2:48</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                4
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>
+            <div class="track-img">
+                <img src="img/rush.jpg" alt="THE LONELIEST" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">THE LONELIEST</span>
+                <div class="track-details">
+                    <span class="track-listens">379.605.078</span>
+                    <span class="track-duration">4:07</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                5
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>            
+            <div class="track-img">
+                <img src="img/teatro-dira-vol-1.jpg" alt="BABY SAID" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">BABY SAID</span>
+                <div class="track-details">
+                    <span class="track-listens">209.932.626</span>
+                    <span class="track-duration">2:44</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                6
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>
+            <div class="track-img">
+                <img src="img/teatro-dira-vol-1.jpg" alt="ZITTI E BUONI" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">ZITTI E BUONI</span>
+                <div class="track-details">
+                    <span class="track-listens">513.769.773</span>
+                    <span class="track-duration">3:14</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                7
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>
+            <div class="track-img">
+                <img src="img/rush.jpg" alt="SUPERMODEL" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">SUPERMODEL</span>
+                <div class="track-details">
+                    <span class="track-listens">346.514.982</span>
+                    <span class="track-duration">2:28</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                8
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>
+            <div class="track-img">
+                <img src="img/rush.jpg" alt="HONEY (ARE U COMING?)" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">HONEY (ARE U COMING?)</span>
+                <div class="track-details">
+                    <span class="track-listens">158.875.356</span>
+                    <span class="track-duration">2:47</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                9
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>
+            
+            <div class="track-img">
+                <img src="img/rush.jpg" alt="MAMMAMIA" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">MAMMAMIA</span>
+                <div class="track-details">
+                    <span class="track-listens">191.733.272</span>
+                    <span class="track-duration">3:06</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="track-item">
+            <div class="track-number">
+                10
+                <i class="fa-solid fa-play"></i> <!-- Ícone de Play -->
+            </div>
+            <div class="track-img">
+                <img src="img/teatro-dira-vol-1.jpg" alt="CORALINE" class="track-cover">
+            </div>
+            <div class="track-info">
+                <span class="track-name">CORALINE</span>
+                <div class="track-details">
+                    <span class="track-listens">248.950.094</span>
+                    <span class="track-duration">5:00</span>
+                    <div class="like-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
 
         <!-- Músicas Curtidas -->
         <div class="liked-tracks">
