@@ -383,50 +383,29 @@ padding: 12px 30px;  /* Aumenta o tamanho do botão */
 border: none;  /* Sem borda visível inicialmente */
 cursor: pointer;
 transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Suaviza a transição de fundo, cor e sombra */
-background-color: transparent; /* Fundo transparente */
+background-color: #3E3E3E; /* Fundo cinza */
 color: #fff;
-}
-
-/* Estilo para os botões com hover */
-.btn:hover {
-    background-color: #1DB954; /* Fundo verde no hover */
-    color: #fff; /* Cor do texto branca */
 }
 
 /* Lançamentos populares */
 .btn-lancamentos {
-    border: #333232; /* Borda verde */
-}
-
-.btn-lancamentos:hover {
-    background-color: #1DB954;
-    color: white;
-    border: 2px solid #1DB954;  /* Mantém a borda no hover */
+    border: #3E3E3E; /* Borda verde */
+    padding: 18px 33px;  /* Aumenta o tamanho do botão */
 }
 
 /* Álbuns */
 .btn-albuns {
-    border: 2px solid #b3b3b3; /* Cor mais neutra para este botão */
-    color: #b3b3b3;  /* Texto cinza */
+    border: 2px solid #3E3E3E; /* Cor mais neutra para este botão */
+    color: #fff;  /* Texto cinza */
 }
 
-.btn-albuns:hover {
-    background-color: #333; /* Cor de fundo escura para hover */
-    color: #fff;  /* Texto branco */
-    border: 2px solid #fff;  /* Borda branca no hover */
-}
 
 /* Singles e EPs */
 .btn-singles {
-    border: 2px solid #b3b3b3; /* Cor de borda neutra */
-    color: #b3b3b3;  /* Cor do texto cinza */
+    border: 2px solid #3E3E3E; /* Cor de borda neutra */
+    color: #fff;  /* Cor do texto cinza */
 }
 
-.btn-singles:hover {
-    background-color: #333;  /* Cor de fundo escura no hover */
-    color: #fff;  /* Texto branco */
-    border: 2px solid #fff;  /* Borda branca no hover */
-}
 
 /* Ajustes de margem e tamanho para botões menores */
 .btn-sm {
@@ -440,38 +419,64 @@ color: #fff;
     margin-bottom: 15px;
 }
 
-
-.album-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+/* Botão ativo semelhante ao Spotify */
+.btn.active {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 2px solid #fff;
 }
 
-.album {
-    width: 200px;
-    text-align: center;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
 
-.album:hover {
-    transform: scale(1.05);
-}
-
-.album img {
+.carousel {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.album p {
-    color: #fff;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 600;
-}
-
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 200px;
+    margin-right: 15px;
+    text-align: center;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .carousel-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
 /* Ajustes para tela pequena */
 @media (max-width: 768px) {
     .artist-info {

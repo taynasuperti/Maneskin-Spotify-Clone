@@ -246,24 +246,97 @@
 </div>
 
         <!-- Discografia -->
-        <div class="discography">
-            <h2>Discografia</h2>
-            <button class="btn btn-sm my-2 btn-lancamentos">Lançamentos populares</button>
-            <button class="btn btn-sm my-2 btn-albuns">Álbuns</button>
-            <button class="btn btn-sm my-2 btn-singles">Singles e EPs</button>
-            <div class="album-list">
-                <div class="album">
-                    <img src="album-1.jpg" alt="Album 1">
-                    <p>Album 1</p>
+<div class="discography">
+    <h2>Discografia</h2>
+    
+    <div class="filters">
+        <button class="btn btn-sm my-2 btn-lancamentos active" onclick="showContent('popular', this)">Lançamentos populares</button>
+        <button class="btn btn-sm my-2 btn-albuns" onclick="showContent('albums', this)">Álbuns</button>
+        <button class="btn btn-sm my-2 btn-singles" onclick="showContent('singles', this)">Singles e EPs</button>
+    </div>
+    
+    <div class="album-list">
+        
+        <!-- Lançamentos populares (inicialmente visível) -->
+        <div class="content" id="popular">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="img/rush-are-u-coming.jpg" alt="RUSH! (ARE U COMING?)">
+                        <a href="#" class="liked-tracks-link">RUSH! (ARE U COMING?)</a>
+                        <p>2023</p>
+                    </div>
+                    <div class="carousel-track">
+                        <div class="carousel-item">
+                            <img src="img/rush.jpg" alt="RUSH!">
+                            <a href="#" class="liked-tracks-link">RUSH!</a>
+                            <p>2023</p>
+                        </div>
+                    <div class="carousel-item">
+                        <img src="img/teatro-dira-vol-1.jpg" alt="Teatro d'ira - Vol.1">
+                        <a href="#" class="liked-tracks-link">Teatro d'ira - Vol.1</a>
+                    </div>
+                    <p>2021</p>
+                    <div class="carousel-item">
+                        <img src="img/il-ballo-della-vita.jpg" alt="Il ballo della vita">
+                        <a href="#" class="liked-tracks-link">Il ballo della vita</a>
+                    </div>
+                    <p>2018</p>
+                    <div class="carousel-item">
+                        <img src="img/chosen.jpg" alt="Chosen">
+                        <a href="#" class="liked-tracks-link">Chosen</a>
+                        <p>2017</p>
+                    </div>
                 </div>
-                <div class="album">
-                    <img src="album-2.jpg" alt="Album 2">
-                    <p>Album 2</p>
-                </div>
-                <!-- Adicionar mais álbuns -->
             </div>
         </div>
+
+        <!-- Álbuns (inicialmente escondido) -->
+        <div class="content" id="albums" style="display: none;">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="img/rush-are-u-coming.jpg" alt="RUSH! (ARE U COMING?)">
+                        <a href="#" class="liked-tracks-link">RUSH! (ARE U COMING?)</a>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/rush.jpg" alt="RUSH!">
+                        <a href="#" class="liked-tracks-link">RUSH!</a>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/teatro-dira-vol-1.jpg" alt="Teatro d'ira - Vol.1">
+                        <a href="#" class="liked-tracks-link">Teatro d'ira - Vol.1</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Singles e EPs (inicialmente escondido) -->
+        <div class="content" id="singles" style="display: none;">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="img/honey-are-u-coming-single.jpg" alt="HONEY (ARE U COMING?)">
+                        <a href="#" class="liked-tracks-link">HONEY (ARE U COMING?)</a>
+                        <p>2023</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/rush.jpg" alt="GOSSIP (feat. Tom Morello)">
+                        <a href="#" class="liked-tracks-link">GOSSIP (feat. Tom Morello)</a>
+                        <p>2023</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/rush.jpg" alt="FINE">
+                        <a href="#" class="liked-tracks-link">FINE</a>
+                        <p>2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
+
 
     <script src="script.js"></script>
 </body>
