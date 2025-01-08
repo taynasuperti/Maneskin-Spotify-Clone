@@ -88,8 +88,6 @@ body {
     transition: color 0.3s ease;
 }
 
-
-
 .play-icon:hover {
     color: #1ED760;
 }
@@ -168,6 +166,7 @@ body {
     padding: 12px 0;
     border-bottom: 1px solid #333;
     cursor: pointer;
+    position: relative;
     transition: background-color 0.2s ease;
 }
 
@@ -186,6 +185,38 @@ body {
     font-size: 18px;
     color: #bbb;
     margin-right: 20px;
+    visibility: visible;  /* O número está visível por padrão */
+    transition: visibility 0.2s ease, color 0.3s ease;  /* Efeito de transição para cor */
+}
+
+.track-number.hidden {
+    visibility: hidden;  /* Esconde o número */
+}
+
+.track-number i {
+    display: none;  /* Ícone de play invisível por padrão */
+}
+
+.track-icon {
+    font-size: 20px;
+    visibility: hidden;  /* Ícone de play inicialmente escondido */
+    transition: visibility 0.2s ease;
+}
+
+.track-item:hover .track-number {
+    visibility: hidden;  /* Esconde o número ao passar o mouse */
+}
+
+.track-item:hover .track-number {
+    visibility: hidden;  /* Esconde o número ao passar o mouse */
+}
+
+.track-item:hover .track-icon {
+    visibility: visible;  /* Mostra o ícone de play ao passar o mouse */
+}
+
+.track-item.playing .track-icon {
+    visibility: visible;  /* Ícone de pausa visível quando a música está tocando */
 }
 
 .track-img img {
@@ -206,10 +237,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Utilizando a largura completa */
-    margin-left: 8px; /* Aumenta o espaçamento à esquerda */
+    width: 100%;
 }
 
+.track-listens, .track-duration {
+    font-size: 14px;
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.track-listens:hover, .track-duration:hover {
+    color: #1DB954;  /* Verde quando passar o mouse */
+}
 
 .track-listens, .track-duration {
     font-size: 14px;
@@ -254,6 +293,75 @@ body {
     display: flex;
     align-items: center;
 }
+
+/* Seção de Músicas Curtidas */
+.liked-tracks {
+    margin: 40px 20px;
+}
+
+.liked-tracks h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-left: 10px; /* Espaçamento igual ao dos outros títulos */
+    color: #fff;
+}
+
+.liked-track-card {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none; /* Remove o efeito de sombra do card */
+    background-color: transparent; /* Remove o fundo escuro */
+    margin-left: 0;
+}
+
+.artist-img {
+    width: 150px;  /* Aumenta o tamanho do card redondo */
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.artist-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;  /* Aumenta um pouco para deixar mais harmônico */
+    line-height: 1.3;  /* Ajusta o espaçamento interno do texto */
+}
+
+.liked-tracks-link {
+    font-size: 18x;  /* Deixa o texto maior */
+    font-weight: bold;
+    color: #fff;  /* Texto branco, sem sublinhado */
+    text-decoration: none;
+    margin-bottom: 3px; /*dá espaço entre o texto e o link */
+}
+
+.liked-tracks-link:hover {
+    text-decoration: underline;  /* Efeito ao passar o mouse */
+}
+
+.liked-tracks-link, p {
+    margin-bottom: 5px; /* Ajusta o espaço abaixo do texto */
+}
+
+
+.track-info p {
+    font-size: 12px;
+    color: #b3b3b3; /* Cinza claro para o texto "De Måneskin" */
+    margin-top: 0;
+    padding: 0; 
+}
+
 /* Discografia */
 .discography {
     margin-top: 30px;
@@ -261,6 +369,77 @@ body {
     background-color: #121212;
     border-radius: 10px;
 }
+
+/* Estilo base para os botões */
+
+.btn {
+font-family: 'Arial', sans-serif;
+font-weight: 300;  /* Fonte mais fina */
+font-size: 14px;  /* Tamanho de fonte maior */
+text-transform: uppercase;
+letter-spacing: 1.2px;  /* Um pouco mais de espaçamento entre as letras */
+border-radius: 30px; /* Bordas bem arredondadas */
+padding: 12px 30px;  /* Aumenta o tamanho do botão */
+border: none;  /* Sem borda visível inicialmente */
+cursor: pointer;
+transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Suaviza a transição de fundo, cor e sombra */
+background-color: transparent; /* Fundo transparente */
+color: #fff;
+}
+
+/* Estilo para os botões com hover */
+.btn:hover {
+    background-color: #1DB954; /* Fundo verde no hover */
+    color: #fff; /* Cor do texto branca */
+}
+
+/* Lançamentos populares */
+.btn-lancamentos {
+    border: #333232; /* Borda verde */
+}
+
+.btn-lancamentos:hover {
+    background-color: #1DB954;
+    color: white;
+    border: 2px solid #1DB954;  /* Mantém a borda no hover */
+}
+
+/* Álbuns */
+.btn-albuns {
+    border: 2px solid #b3b3b3; /* Cor mais neutra para este botão */
+    color: #b3b3b3;  /* Texto cinza */
+}
+
+.btn-albuns:hover {
+    background-color: #333; /* Cor de fundo escura para hover */
+    color: #fff;  /* Texto branco */
+    border: 2px solid #fff;  /* Borda branca no hover */
+}
+
+/* Singles e EPs */
+.btn-singles {
+    border: 2px solid #b3b3b3; /* Cor de borda neutra */
+    color: #b3b3b3;  /* Cor do texto cinza */
+}
+
+.btn-singles:hover {
+    background-color: #333;  /* Cor de fundo escura no hover */
+    color: #fff;  /* Texto branco */
+    border: 2px solid #fff;  /* Borda branca no hover */
+}
+
+/* Ajustes de margem e tamanho para botões menores */
+.btn-sm {
+    font-size: 14px;  /* Tamanho maior da fonte */
+    padding: 10px 25px;  /* Ajuste no padding para os botões maiores */
+}
+
+/* Maior espaçamento entre os botões */
+.my-2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 
 .album-list {
     display: flex;
