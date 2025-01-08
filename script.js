@@ -96,21 +96,36 @@ let indexes = {
     popular: 0,
     albums: 0,
     singles: 0
-  };
-  
-  function moveSlide(step, section) {
+};
+
+function moveSlide(step, section) {
     const track = document.querySelector(`#${section} .carousel-track`);
     const items = document.querySelectorAll(`#${section} .carousel-item`);
-    const itemWidth = items[0].offsetWidth + 15;
-  
+    const itemWidth = items[0].offsetWidth + 30; // Aumento no espaçamento entre os itens
+
     indexes[section] += step;
-  
+
     if (indexes[section] < 0) {
-      indexes[section] = items.length - 1;
+        indexes[section] = items.length - 1;
     } else if (indexes[section] >= items.length) {
-      indexes[section] = 0;
+        indexes[section] = 0;
     }
-  
+
     track.style.transform = `translateX(${-indexes[section] * itemWidth}px)`;
-  }
-  
+}
+
+function showContent(contentType, button) {
+    const sections = document.querySelectorAll('.content');
+    const buttons = document.querySelectorAll('.btn');
+
+    sections.forEach((section) => {
+        section.style.display = 'none';
+    });
+
+    buttons.forEach((btn) => {
+        btn.classList.remove('active');
+    });
+
+    document.getElementById(contentType).style.display = 'block';
+    button.classList.add('active');
+}
