@@ -375,14 +375,13 @@ body {
     font-family: 'Arial', sans-serif;
     font-weight: 300;
     font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     border-radius: 30px;
-    padding: 12px 30px;
+    padding: 10px 28px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-    background-color: #3E3E3E;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #3b3b3b;
     color: #fff;
 }
 
@@ -393,159 +392,65 @@ body {
     border-bottom: 2px solid #fff;
 }
 
-/* Lançamentos populares */
 .btn-lancamentos {
-    padding: 18px 33px;
+    padding: 11px 18px;
+    margin: 0 2px; /* Espaçamento horizontal */
 }
 
-/* Álbuns e Singles */
 .btn-albuns, .btn-singles {
-    padding: 18px 33px;
+    padding: 11px 18px;
+    margin: 0 2px; /* Espaçamento horizontal */  
 }
 
-/* Estilo para o carrossel e imagens */
-/* Carrossel */
-.carousel {
-    position: relative;
+/* Grid de cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Cards responsivos */
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background-color: #181818;
+    border-radius: 8px;
     overflow: hidden;
-    width: 100%; /* Garantir que o carrossel ocupe toda a largura disponível */
-    max-width: 1200px;
-    margin: auto;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 300px; /* Aumenta o tamanho mínimo dos itens */
-    margin-right: 30px; /* Ajusta o espaçamento entre os itens */
     text-align: center;
-    position: relative;
-    box-shadow: none; /* Remove a sombra feia */
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #333; /* Cor do fundo do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-/* Ajuste das imagens para não cortar */
-.carousel-item img {
+.card:hover {
+    transform: scale(1.05); /* Leve aumento no tamanho */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Sombra ao hover */
+}
+
+/* Imagem dos cards */
+.card-image {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover; /* Faz com que a imagem se ajuste sem cortar */
+    aspect-ratio: 1; /* Torna a imagem quadrada */
+    object-fit: cover;
 }
 
-/* Overlay e ícone de play */
-.overlay {
-    position: absolute;
-    bottom: 10px; /* Alinha no canto inferior direito */
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais opaco */
-    padding: 12px;
-    border-radius: 8px; /* Bordas arredondadas do card */
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* Conteúdo dos cards */
+.card-content {
+    padding: 10px;
 }
 
-.play-icon {
-    color: #b3b3b3; /* Cor cinza similar aos botões */
-    font-size: 30px;
-}
-
-.carousel-item:hover .overlay {
-    opacity: 1;
-}
-
-/* Card cinza com bordas como o do Spotify */
-.carousel-item {
-    border-radius: 8px;
-    background-color: #333; /* Cor cinza do card */
-    box-shadow: none; /* Remover a sombra feia */
-    overflow: hidden; /* Evitar que a imagem ultrapasse o limite */
-}
-
-/* Remover ícones ao passar as fotos do carrossel */
-.carousel-item .overlay {
-    display: none; /* Esconde o ícone enquanto não estiver passando o mouse */
-}
-
-.carousel-item:hover .overlay {
-    display: block; /* Exibe o ícone ao passar o mouse */
-}
-  
-/* Ajustes para tela pequena */
-@media (max-width: 768px) {
-    .artist-info {
-        flex-direction: column;
-        align-items: center;
-        top: 40%;
-    }
-
-    .photo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .artist-name {
-        font-size: 36px;
-    }
-
-    .monthly-listeners {
-        font-size: 14px;
-    }
-
-    .album {
-        width: 150px;
-    }
-
-    .track-name {
-        font-size: 16px;
-    }
-
-    .track-duration {
-        font-size: 12px;
-    }
-}
-
-.track-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.track-cover {
-    width: 50px;  /* Ajuste o tamanho conforme necessário */
-    height: 50px;
-    border-radius: 5px;
-    margin-right: 15px;
-}
-
-.track-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.track-name {
-    font-size: 16px;
+.card-title {
+    color: #fff;
     font-weight: bold;
-}
-
-.track-duration {
     font-size: 14px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.card-title:hover {
+    color: #1DB954; /* Cor do Spotify no hover */
+}
+
+.card-content p {
     color: #b3b3b3;
-}
-
-.carousel-item {
-    min-width: 220px; /* Ajusta o tamanho para telas pequenas */
-}
-
-.overlay {
-    bottom: 5px; /* Ajusta a posição do ícone em telas menores */
-    right: 5px;
-}
-
-.play-icon {
-    font-size: 24px; /* Ajusta o tamanho do ícone para telas menores */
+    font-size: 12px;
 }

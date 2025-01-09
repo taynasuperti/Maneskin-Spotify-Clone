@@ -239,7 +239,7 @@
             <img src="img/capa.jpg" alt="Músicas Curtidas"> 
         </div>
         <div class="track-info">
-            <a href="#" class="liked-tracks-link">Você curtiu 10 músicas</a>
+            <a href="like-music.html" class="liked-tracks-link">Você curtiu 10 músicas</a>
             <p>De Måneskin</p>
         </div>
     </div>
@@ -250,7 +250,7 @@
     <h2>Discografia</h2>
     
     <div class="filters">
-        <button class="btn btn-sm my-2 btn-lancamentos active" onclick="showContent('popular', this)">Lançamento    populares</button>
+        <button class="btn btn-sm my-2 btn-lancamentos active" onclick="showContent('popular', this)">Lançamentos populares</button>
         <button class="btn btn-sm my-2 btn-albuns" onclick="showContent('albums', this)">Álbuns</button>
         <button class="btn btn-sm my-2 btn-singles" onclick="showContent('singles', this)">Singles e EPs</button>
     </div>
@@ -259,31 +259,41 @@
         
         <!-- Lançamentos populares (inicialmente visível) -->
         <div class="content" id="popular">
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-item">
-                        <img src="img/teatro-dira-vol-1.jpg" alt="Teatro d'ira - Vol.1">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
-                        </div>
-                        <a href="#" class="liked-tracks-link">Teatro d'ira - Vol.1</a>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="img/teatro-dira-vol-1.jpg" alt="Teatro d'ira - Vol.1" class="card-image">
+                    <div class="card-content">
+                        <a href="teatro-dira-vol-1.html" class="card-title">Teatro d'ira - Vol.1</a>
                         <p>2021 • Álbum</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/chosen.jpg" alt="Chosen">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
-                        </div>
-                        <a href="#" class="liked-tracks-link">Chosen</a>
+                </div>
+                <div class="card">
+                    <img src="img/chosen.jpg" alt="Chosen" class="card-image">
+                    <div class="card-content">
+                        <a href="chosen.html" class="card-title">Chosen</a>
                         <p>2017 • Álbum</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/rush-are-u-coming.jpg" alt="RUSH! (ARE U COMING?)">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                </div>
+                    <div class="card">
+                        <img src="img/rush-are-u-coming.jpg" alt="RUSH! (ARE U COMING?)" class="card-image">
+                        <div class="card-content">
+                            <a href="rush-are-u-coming.html" class="card-title">RUSH! (ARE U COMING?)</a>
+                            <p>2023 • Álbum</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">RUSH! (ARE U COMING?)</a>
-                        <p>2023 • Álbum</p>
+                    </div>
+                    <div class="card">
+                        <img src="img/il-ballo-della-vita.jpg" alt="Il ballo della vita" class="card-image">
+                        <div class="card-content">
+                            <a href="il-ballo-della-vita.html" class="card-title">Il ballo della vita</a>
+                            <p>2018 • Álbum</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/rush.jpg" alt="RUSH!" class="card-image">
+                        <div class="card-content">
+                            <a href="rush.html" class="card-title">RUSH!</a>
+                            <p>2023 • Álbum</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -291,172 +301,150 @@
 
         <!-- Álbuns (inicialmente escondido) -->
         <div class="content" id="albums" style="display: none;">
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-item">
-                        <img src="img/rush-are-u-coming.jpg" alt="RUSH! (ARE U COMING?)">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
-                        </div>
-                        <a href="#" class="liked-tracks-link">RUSH! (ARE U COMING?)</a>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="img/rush-are-u-coming.jpg" alt="RUSH! (ARE U COMING?)" class="card-image">
+                    <div class="card-content">
+                        <a href="rush-are-u-coming.html" class="card-title">RUSH! (ARE U COMING?)</a>
                         <p>2023 • Álbum</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/rush.jpg" alt="RUSH!">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                </div>
+                    <div class="card">
+                        <img src="img/rush.jpg" alt="RUSH!" class="card-image">
+                        <div class="card-content">
+                            <a href="rush.html" class="card-title">RUSH!</a>
+                            <p>2023 • Álbum</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">RUSH!</a>
-                        <p>2023 • Álbum</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/teatro-dira-vol-1.jpg" alt="Teatro d'ira - Vol.1">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/teatro-dira-vol-1.jpg" alt="Teatro d'ira - Vol.1" class="card-image">
+                        <div class="card-content">
+                            <a href="teatro-dira-vol-1.html" class="card-title">Teatro d'ira - Vol.1</a>
+                            <p>2021 • Álbum</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">Teatro d'ira - Vol.1</a>
-                        <p>2021 • Álbum</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/il-ballo-della-vita.jpg" alt="Il ballo della vita">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/il-ballo-della-vita.jpg" alt="Il ballo della vita" class="card-image">
+                        <div class="card-content">
+                            <a href="il-ballo-della-vita.html" class="card-title">Il ballo della vita</a>
+                            <p>2018 • Álbum</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">Il ballo della vita</a>
-                        <p>2018 • Álbum</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/chosen.jpg" alt="Chosen">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/chosen.jpg" alt="Chosen" class="card-image">
+                        <div class="card-content">
+                            <a href="chosen.html" class="card-title">Chosen</a>
+                            <p>2017 • Álbum</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">Chosen</a>
-                        <p>2017 • Álbum</p>
                     </div>
                 </div>
             </div>
-        </div>
+        
 
         <!-- Singles e EPs (inicialmente escondido) -->
         <div class="content" id="singles" style="display: none;">
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-item">
-                        <img src="img/honey-are-u-coming-single.jpg" alt="HONEY (ARE U COMING?)">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="img/honey-are-u-coming-single.jpg" alt="HONEY (ARE U COMING?)" class="card-image">
+                        <div class="card-content">
+                            <a href="honey-are-u-coming.html" class="card-title">HONEY (ARE U COMING?)</a>
+                            <p>2023 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">HONEY (ARE U COMING?)</a>
-                        <p>2023 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/rush.jpg" alt="GOSSIP (feat. Tom Morello)">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/rush.jpg" alt="GOSSIP (feat. Tom Morello)" class="card-image">
+                        <div class="card-content">
+                            <a href="gossip.html" class="card-title">GOSSIP (feat. Tom Morello)</a>
+                            <p>2023 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">GOSSIP (feat. Tom Morello)</a>
-                        <p>2023 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/rush.jpg" alt="FINE">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/rush.jpg" alt="FINE" class="card-image">
+                        <div class="card-content">
+                            <a href="fine.html" class="card-title">FINE</a>
+                            <p>2022 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">FINE</a>
-                        <p>2022 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/capa-2.jpg" alt="THE LONELIEST">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/capa-2.jpg" alt="THE LONELIEST" class="card-image">
+                        <div class="card-content">
+                            <a href="the-loneliest.html" class="card-title">THE LONELIES</a>
+                            <p>2022 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">THE LONELIES</a>
-                        <p>2022 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/if-i-can-dream.jpg" alt="If I Can Dream (From The Original Motion Picture Soundtrack ELVIS)">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/if-i-can-dream.jpg" alt="If I Can Dream (From The Original Motion Picture Soundtrack ELVIS)" class="card-image">
+                        <div class="card-content">
+                            <a href="if-i-can-dream.html" class="card-title">If I Can Dream (From The Original Motion Picture Soundtrack ELVIS)</a>
+                            <p>2022 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">If I Can Dream (From The Original Motion Picture Soundtrack ELVIS)</a>
-                        <p>2022 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/supermodel.jpg" alt="SUPERMODEL">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/supermodel.jpg" alt="SUPERMODEL" class="card-image">
+                        <div class="card-content">   
+                            <a href="supermodel.html" class="card-title">SUPERMODEL</a>
+                            <p>2022 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">SUPERMODEL</a>
-                        <p>2022 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/mammamia.jpg" alt="MAMMAMIA">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/mammamia.jpg" alt="MAMMAMIA" class="card-image">
+                        <div class="card-content">
+                            <a href="mammamia.html" class="card-title">MAMMAMIA</a>
+                            <p>2021 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">MAMMAMIA</a>
-                        <p>2021 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/i-wanna-be-your-slave.jpg" alt="I WANNA BE YOUR SLAVE (with Iggy Pop)">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/i-wanna-be-your-slave.jpg" alt="I WANNA BE YOUR SLAVE (with Iggy Pop)" class="card-image">
+                        <div class="card-content">
+                            <a href="fine.html" class="card-title">FINE</a>
+                            <p>2021 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">FINE</a>
-                        <p>2021 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/zitti-e-buoni.jpg" alt="ZITTI E BUONI">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/zitti-e-buoni.jpg" alt="ZITTI E BUONI" class="card-image">
+                        <div class="card-content">
+                            <a href="zitti-e-buoni.html" class="card-title">ZITTI E BUONI</a>
+                            <p>2021 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">ZITTI E BUONI</a>
-                        <p>2021 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/beggin-live.jpg" alt="Beggin'(Live)">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/beggin-live.jpg" alt="Beggin'(Live)" class="card-image">
+                        <div class="card-content">
+                            <a href="beggin.html" class="card-title">Beggin'(Live)</a>
+                            <p>2021 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">Beggin'(Live)</a>
-                        <p>2021 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/ventanni.jpg" alt="VENT'ANNI">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/ventanni.jpg" alt="VENT'ANNI" class="card-image">
+                        <div class="card-content">
+                            <a href="ventannia.html" class="card-title">VENT'ANNI</a>
+                            <p>2020 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">VENT'ANNI</a>
-                        <p>2020 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/torna-a-casa.jpg" alt="Torna a casa">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/torna-a-casa.jpg" alt="Torna a casa" class="card-image">
+                        <div class="card-content">
+                            <a href="torna-a-casa.html" class="card-title">Torna a casa</a>
+                            <p>2018 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">Torna a casa</a>
-                        <p>2018 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/moriro-da-re.jpg" alt="Morirò da Re">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/moriro-da-re.jpg" alt="Morirò da Re" class="card-image">
+                        <div class="card-content">
+                            <a href="moriro-da-re.html" class="card-title">Morirò da Re</a>
+                            <p>2018 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">Morirò da Re</a>
-                        <p>2018 • Single</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/chosen-2017.jpg" alt="Chosen">
-                        <div class="overlay">
-                            <i class="fa-solid fa-circle-play play-icon"></i>
+                    <div class="card">
+                        <img src="img/chosen-2017.jpg" alt="Chosen" class="card-image">
+                        <div class="card-content">
+                            <a href="chosen.html" class="card-title">Chosen</a>
+                            <p>2017 • Single</p>
                         </div>
-                        <a href="#" class="liked-tracks-link">Chosen</a>
-                        <p>2017 • Single</p>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
