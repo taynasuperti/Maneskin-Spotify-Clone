@@ -29,17 +29,6 @@ body {
     filter: brightness(50%);
 }
 
-
-/* Gradiente de sobreposição para efeito visual */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
-}
-
 /* Informação do Artista (posição e estilo) */
 .artist-info {
     position: absolute;
@@ -189,34 +178,8 @@ body {
     transition: visibility 0.2s ease, color 0.3s ease;  /* Efeito de transição para cor */
 }
 
-.track-number.hidden {
-    visibility: hidden;  /* Esconde o número */
-}
-
-.track-number i {
-    display: none;  /* Ícone de play invisível por padrão */
-}
-
-.track-icon {
-    font-size: 20px;
-    visibility: hidden;  /* Ícone de play inicialmente escondido */
-    transition: visibility 0.2s ease;
-}
-
 .track-item:hover .track-number {
     visibility: hidden;  /* Esconde o número ao passar o mouse */
-}
-
-.track-item:hover .track-number {
-    visibility: hidden;  /* Esconde o número ao passar o mouse */
-}
-
-.track-item:hover .track-icon {
-    visibility: visible;  /* Mostra o ícone de play ao passar o mouse */
-}
-
-.track-item.playing .track-icon {
-    visibility: visible;  /* Ícone de pausa visível quando a música está tocando */
 }
 
 .track-img img {
@@ -270,12 +233,6 @@ body {
     color: #A7A7A7; /* Cor ao passar o mouse */
 }
 
-
-/* Alterar para mostrar ícone de Play ao passar o mouse */
-.track-item:hover .track-number {
-    color: #fff;
-}
-
 .track-item:hover .track-name {
     color: #fff;
 }
@@ -284,9 +241,8 @@ body {
     color: #1DB954;
 }
 
-/* Adicionando o ícone de "ellipsis" */
-.track-item .track-duration:hover {
-    color: #fff;
+.track-item:hover .track-listens {
+    color: #1DB954;
 }
 
 .track-item .track-info {
@@ -307,19 +263,9 @@ body {
     color: #fff;
 }
 
-.liked-track-card {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none; /* Remove o efeito de sombra do card */
-    background-color: transparent; /* Remove o fundo escuro */
-    margin-left: 0;
-}
-
 .artist-img {
     width: 150px;  /* Aumenta o tamanho do card redondo */
-    height: 130px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 15px;
@@ -405,23 +351,46 @@ body {
 /* Grid de cards */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Cards responsivos */
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas iguais */
     gap: 20px;
+    margin-top: 20px; /* Caso prefira ajustar pelo grid dos cards */
 }
 
 /* Cards */
 .card {
-    background-color: #181818;
+    background-color: #121212;
     border-radius: 8px;
+    padding: 10px; /* Espaçamento interno */
+    margin: 1px; /* Espaçamento externo para separar os cards */
+    position: relative; /* Necessário para posicionar o ícone dentro do card */
+    flex-direction: column;
     overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    transition: transform 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
     cursor: pointer;
 }
 
+/* Esconde o ícone de play inicialmente */
+.play-icon {
+    position: absolute;
+    bottom: 100px; /* Distância do fundo */
+    left: 81%; /* Centraliza horizontalmente */
+    transform: translateX(-40%); /* Ajuste para centralização exata */
+    font-size: 45px; /* Tamanho do ícone */
+    color: #1DB954; /* Cor do ícone */
+    opacity: 0; /* Ícone invisível */
+    transition: opacity 0.3s ease; /* Transição suave */
+}
+
 .card:hover {
-    transform: scale(1.05); /* Leve aumento no tamanho */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Sombra ao hover */
+    background-color: #3b3b3b;
+    
+}
+
+/* Exibe o ícone de play ao passar o mouse */
+.card:hover .play-icon {
+    opacity: 1; /* Torna o ícone visível */
 }
 
 /* Imagem dos cards */
@@ -447,7 +416,7 @@ body {
 }
 
 .card-title:hover {
-    color: #1DB954; /* Cor do Spotify no hover */
+    text-decoration: underline
 }
 
 .card-content p {
